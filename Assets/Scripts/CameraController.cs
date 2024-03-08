@@ -38,7 +38,7 @@ public class CameraController : MonoBehaviour
 
             if (Physics.Raycast(mouseClickRay, out hit))
             {
-                Debug.Log(hit.transform.name);
+                // Debug.Log(hit.transform.name);
             }
         }
     }
