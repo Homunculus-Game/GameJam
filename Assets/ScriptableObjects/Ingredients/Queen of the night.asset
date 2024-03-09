@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Queen of the night
   sprite: {fileID: 21300000, guid: fddd9c6676de2154f9f5ed92e6238b14, type: 3}
-  count: 0
+  count: 5

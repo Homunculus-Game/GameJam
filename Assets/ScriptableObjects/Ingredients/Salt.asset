@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Salt
   sprite: {fileID: 21300000, guid: 6468ad0387c69d34887b5977deb72f83, type: 3}
-  count: 0
+  count: 5

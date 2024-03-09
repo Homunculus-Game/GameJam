@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Olive branch
   sprite: {fileID: 21300000, guid: 55ee96995caa6c04686ad6e99db1906a, type: 3}
-  count: 0
+  count: 5

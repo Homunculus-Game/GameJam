@@ -3,19 +3,21 @@ using UnityEngine;
 
 public class InitPotion : MonoBehaviour
 {
-    [SerializeField] private Potion potion;
+    [SerializeField] private Potion _potion;
 
-    [SerializeField] private SpriteRenderer spriteRenderer;
-    [SerializeField] private TMP_Text text;
+    [SerializeField] private SpriteRenderer _spriteRenderer;
+    [SerializeField] private TMP_Text _text;
 
     private void Start()
     {
-        spriteRenderer.sprite = potion.sprite;
-        text.text = potion.count.ToString();
+        // _potion.count = 4;
+        _potion.number = 0;
+        _spriteRenderer.sprite = _potion.sprite;
+        _text.text = _potion.count.ToString();
     }
 
     private void Update()
     {
-        text.text = potion.count.ToString();
+        _text.text = _potion.count.ToString();
     }
 }
