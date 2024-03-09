@@ -56,7 +56,7 @@ public class SpawnImage : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             Ray mouseClickRay = Camera.main.ScreenPointToRay(Input.mousePosition);
-
+        
             if (Physics.Raycast(mouseClickRay, out RaycastHit hit))
             {
                 if (hit.transform.CompareTag("sprite"))
@@ -64,8 +64,8 @@ public class SpawnImage : MonoBehaviour
                     _rubedo.count--;
                     _rectTransform = Instantiate(_spawn, Input.mousePosition, Quaternion.identity, _canvas.transform);
                     inHand = true;
-                    Debug.Log("it is sprite");
-
+                    //Debug.Log("it is sprite");
+        
                     if (_rubedo.count == 0)
                     {
                         // _spriteRenderer.sprite = null;
@@ -76,7 +76,7 @@ public class SpawnImage : MonoBehaviour
                 {
                     Destroy(_rectTransform);
                     inHand = false;
-                    Debug.Log("sprite gone");
+                    //Debug.Log("sprite gone");
                 }
                 else
                 {
@@ -90,11 +90,11 @@ public class SpawnImage : MonoBehaviour
                         // _spriteRenderer.sprite = _rubedo.sprite;
                         _sprite.SetActive(true);
                     }
-
+        
                     Destroy(_rectTransform);
                     inHand = false;
                 }
-
+        
             }
         }
     }

@@ -7,4 +7,5 @@ public class Potion : ScriptableObject
     public Sprite sprite;
 
     public int count;
+    public int number;
 }

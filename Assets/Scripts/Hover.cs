@@ -11,6 +11,8 @@ public class Hover : MonoBehaviour
 
     [SerializeField] private GameObject canvas;
 
+    [SerializeField] private GameObject _descritpion;
+
     private void Awake()
     {
         initialPos = transform.position;
@@ -20,6 +22,8 @@ public class Hover : MonoBehaviour
     private void Start()
     {
         newPosition = new Vector3(transform.position.x, transform.position.y + offset, transform.position.z);
+
+        _descritpion.SetActive(false);
     }
 
     void Update()
@@ -35,6 +39,7 @@ public class Hover : MonoBehaviour
         if (canvas.activeSelf == false)
             return;
 
+        _descritpion.SetActive(true);
 
         targetPos = newPosition;
 
@@ -45,6 +50,8 @@ public class Hover : MonoBehaviour
     {
         if (canvas.activeSelf == false)
             return;
+
+        _descritpion.SetActive(false);
 
         // transform.position = initialPos;
         targetPos = initialPos;
