@@ -10,7 +10,7 @@ public class InitPotion : MonoBehaviour
 
     private void Start()
     {
-        _potion.count = 0;
+        // _potion.count = 4;
         _potion.number = 0;
         _spriteRenderer.sprite = _potion.sprite;
         _text.text = _potion.count.ToString();

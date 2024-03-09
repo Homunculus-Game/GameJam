@@ -4,8 +4,6 @@ public class StirAnimation : MonoBehaviour
 {
     [SerializeField] private Animator animator;
 
-    [SerializeField] private Transform spoonTransform;
-
     [SerializeField] private string _trigger;
 
     [SerializeField] private Potion _potion;
@@ -15,22 +13,6 @@ public class StirAnimation : MonoBehaviour
     [SerializeField] private Ingredient _ingredient3;
     [SerializeField] private Ingredient _ingredient4;
     [SerializeField] private Ingredient _ingredient5;
-
-    private Vector3 _initialPosition;
-
-    void Start()
-    {
-        _initialPosition = spoonTransform.position;
-    }
-
-    void Update()
-    {
-        if (animator.speed == 0.0f)
-        {
-            spoonTransform.position = Vector3.Lerp(spoonTransform.position, _initialPosition, 2.0f * Time.deltaTime);
-            Debug.Log("no stir");
-        }
-    }
 
     private void OnMouseDown()
     {

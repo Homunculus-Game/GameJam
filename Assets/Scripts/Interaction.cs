@@ -12,12 +12,12 @@ public class Interaction : MonoBehaviour
     private void OnMouseOver()
     {
         overThis = true;
-        Debug.Log("over");
+        // Debug.Log("over");
     }
 
     private void OnMouseExit()
     {
         overThis = false;
-        Debug.Log("exit");
+        // Debug.Log("exit");
     }
 }

@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class UsePotion : MonoBehaviour
@@ -13,13 +14,25 @@ public class UsePotion : MonoBehaviour
     private GameObject _spawnedObject;
     private SpriteRenderer _spriteRenderer;
     private BoxCollider _boxCollider;
+
+    private int _thisPotion;
     
-    private int _nr;
+    public Action<Potion> OnPotionUsed;
+
+    public int potionCount;
 
     private void Start()
     {
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _boxCollider = GetComponent<BoxCollider>();
+
+        // switch (_potion.name)
+        // {
+        //     case "Albedo": _thisPotion = ResourceManager.instance.albedoCount; break;
+        //     case "Rubedo": _thisPotion = ResourceManager.instance.rubedoCount; break;
+        //     case "Nigredo": _thisPotion = ResourceManager.instance.nigredoCount; break;
+        //     case "Failed": _thisPotion = ResourceManager.instance.failedCount; break;
+        // }
     }
 
     private void Update()
@@ -53,6 +66,7 @@ public class UsePotion : MonoBehaviour
         }
         else
         {
+            OnPotionUsed?.Invoke(_potion);
             _potion.number++;
         }
         Destroy(_spawnedObject);

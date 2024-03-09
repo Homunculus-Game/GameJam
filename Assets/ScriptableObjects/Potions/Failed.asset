@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57a6519ef1f6d784da93bff21f140b5e, type: 3}
   m_Name: Failed
   m_EditorClassIdentifier: 
-  name: Failed potion
+  name: Failed
   sprite: {fileID: 21300000, guid: c86eca9b834aea644852955eb9968988, type: 3}
-  count: 5
-  number: 0
+  count: 0
+  number: 2
