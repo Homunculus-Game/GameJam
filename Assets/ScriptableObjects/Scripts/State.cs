@@ -8,4 +8,7 @@ public class State : ScriptableObject
     public int stage;
     public Vector3 scale;
     public GameObject gameObject;
+
+    public AudioClip clip;
+    public bool loop;
 }

@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d584cfc36981704993aaebcb9b880f0, type: 3}
   m_Name: Big2
   m_EditorClassIdentifier: 
-  name: big
+  name: big2
   ID: 0
   stage: 0
   scale: {x: 5, y: 5, z: 5}
   gameObject: {fileID: 0}
+  audioSource: {fileID: 0}
+  clip: {fileID: 8300000, guid: 31bf4785059acbc4ba03b5bfdd9b2d6d, type: 3}

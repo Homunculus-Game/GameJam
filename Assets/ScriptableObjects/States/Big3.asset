@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d584cfc36981704993aaebcb9b880f0, type: 3}
   m_Name: Big3
   m_EditorClassIdentifier: 
-  name: big
+  name: big3
   ID: 0
   stage: 0
   scale: {x: 5.5, y: 5.5, z: 5.5}
   gameObject: {fileID: 0}
+  clip: {fileID: 8300000, guid: c6b877d03dfd6e84d87997f9be7b4e4a, type: 3}
+  loop: 1

@@ -22,6 +22,10 @@ public class ChangeState : MonoBehaviour
 
     public static int _potionsUsed = 0;
 
+    [SerializeField] private AudioSource[] _audio;
+
+    private AudioSource _audioSource;
+
     private void Awake()
     {
         foreach (var usePotionScript in usePotionScripts)
@@ -36,6 +40,8 @@ public class ChangeState : MonoBehaviour
         _transform.localScale = _defaultState.scale;
 
         _potionsUsed = 0;
+
+        _audioSource = GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -49,6 +55,7 @@ public class ChangeState : MonoBehaviour
                     //_stage3.SetActive(false);
 
                     _stage1.transform.localScale = Vector3.Lerp(_stage1.transform.localScale, _currentState.scale, 4.0f * Time.deltaTime);
+
                     break;
                 }
             case 1:
@@ -87,6 +94,17 @@ public class ChangeState : MonoBehaviour
         {
             _hat.SetActive(false);
         }
+        // _audioSource.clip = _currentState.clip;
+        //if (_currentState.name == "big2")
+        {
+            //_audio[0].Play();
+
+        }
+        //if (_currentState.name == "big3")
+        {
+            // _audio[1].Play();
+            //_audioSource.clip = _currentState.clip; _audioSource.Play();
+        }
     }
 
     List<Transition> GetPossibleTransitions(State state)
@@ -116,6 +134,9 @@ public class ChangeState : MonoBehaviour
             {
                 _potionsUsed++;
                 _currentState = transition.toState;
+                _audioSource.clip = _currentState.clip;
+                _audioSource.Play();
+                _audioSource.loop = _currentState.loop;
                 break;
             }
         }
