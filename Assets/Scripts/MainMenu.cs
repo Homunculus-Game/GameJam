@@ -14,8 +14,8 @@ public class MainMenu : MonoBehaviour
 
     public void PlayGame()
     {
-        ResourceManager.albedoCount = 0;
-        ResourceManager.rubedoCount = 0;
+        ResourceManager.albedoCount = 3;
+        ResourceManager.rubedoCount = 3;
         ResourceManager.nigredoCount = 0;
         ResourceManager.failedCount = 0;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);

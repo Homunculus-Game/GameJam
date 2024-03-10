@@ -20,7 +20,7 @@ public class ChangeState : MonoBehaviour
 
     private State _currentState;
 
-    private int _potionsUsed;
+    public static int _potionsUsed = 0;
 
     private void Awake()
     {

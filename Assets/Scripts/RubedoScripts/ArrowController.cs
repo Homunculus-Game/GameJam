@@ -1,11 +1,13 @@
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
-public class MiniGameController : MonoBehaviour
+public class ArrowController : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
     public Transform arrow;
     public Transform redRectangle;
     public Transform progressBar;
-    public Transform cauldron;
+    public Button cauldronButton;
 
     public float arrowSpeed = 3f;
     public float progressSpeed = 0.5f;
@@ -13,20 +15,20 @@ public class MiniGameController : MonoBehaviour
     private bool isArrowMovingUp;
     private bool isProgressBarFilling;
 
-    private void OnMouseDown()
+    public void OnPointerDown(PointerEventData eventData)
     {
+        Debug.Log("Button Pressed");
         if (!isArrowMovingUp)
         {
             isArrowMovingUp = true;
         }
     }
 
-    private void OnMouseUp()
+    public void OnPointerUp(PointerEventData eventData)
     {
-        if (isArrowMovingUp)
-        {
-            isArrowMovingUp = false;
-        }
+        Debug.Log("Button Released");
+        // Stop arrow movement when the button is released
+        isArrowMovingUp = false;
     }
 
     private void Update()

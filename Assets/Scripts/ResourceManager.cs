@@ -25,8 +25,8 @@ public class ResourceManager : MonoBehaviour
 
         currentDay = 1;
 
-        albedoCount = 0;
-        rubedoCount = 0;
+        albedoCount = 3;
+        rubedoCount = 3;
         nigredoCount = 0;
         failedCount = 0;
 
