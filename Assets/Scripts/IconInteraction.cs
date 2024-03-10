@@ -19,7 +19,7 @@ public class IconInteraction : MonoBehaviour
                     ResourceManager.salt -= 2;
                     ResourceManager.olive -= 2;
                     //ResourceManager.albedoCount++;
-                    SceneManager.LoadScene("AlbedoMinigame");
+                    SceneManager.LoadScene("AlbedoMinigame", LoadSceneMode.Additive);
                 }
                 break;
             }
