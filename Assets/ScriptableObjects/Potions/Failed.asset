@@ -14,5 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Failed
   sprite: {fileID: 21300000, guid: c86eca9b834aea644852955eb9968988, type: 3}
-  count: 0
-  number: 2
+  id: 1

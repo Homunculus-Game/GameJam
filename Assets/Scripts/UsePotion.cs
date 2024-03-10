@@ -15,29 +15,17 @@ public class UsePotion : MonoBehaviour
     private SpriteRenderer _spriteRenderer;
     private BoxCollider _boxCollider;
 
-    private int _thisPotion;
-    
     public Action<Potion> OnPotionUsed;
-
-    public int potionCount;
 
     private void Start()
     {
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _boxCollider = GetComponent<BoxCollider>();
-
-        // switch (_potion.name)
-        // {
-        //     case "Albedo": _thisPotion = ResourceManager.instance.albedoCount; break;
-        //     case "Rubedo": _thisPotion = ResourceManager.instance.rubedoCount; break;
-        //     case "Nigredo": _thisPotion = ResourceManager.instance.nigredoCount; break;
-        //     case "Failed": _thisPotion = ResourceManager.instance.failedCount; break;
-        // }
     }
 
     private void Update()
     {
-        if (_potion.count <= 0)
+        if (GetPotionID(_potion) <= 0)
         {
             ActivateObject(false);
         }
@@ -49,7 +37,8 @@ public class UsePotion : MonoBehaviour
 
     private void OnMouseDown()
     {
-        _potion.count--;
+        // _potion.count--;
+        AddPotion(-1);
         _spawnedObject = Instantiate(_prefab, Input.mousePosition, Quaternion.identity, _canvas.transform);
     }
 
@@ -62,12 +51,14 @@ public class UsePotion : MonoBehaviour
     {
         if (Interaction.overThis == false)
         {
-            _potion.count++;
+            // _potion.count++;
+            AddPotion(1);
         }
         else
         {
             OnPotionUsed?.Invoke(_potion);
-            _potion.number++;
+            // AddPotion(1);
+            // _potion.number++;
         }
         Destroy(_spawnedObject);
     }
@@ -79,5 +70,62 @@ public class UsePotion : MonoBehaviour
 
         _spriteRenderer.enabled = isActive;
         _boxCollider.enabled = isActive;
+    }
+
+    private void AddPotion(int nr)
+    {
+        switch (_potion.id)
+        {
+        case 0:
+            {
+                ResourceManager.albedoCount += nr;
+                break;
+            }
+        case 1:
+            {
+                ResourceManager.failedCount += nr;
+                break;
+            }
+        case 2:
+            {
+                ResourceManager.nigredoCount += nr;
+                break;
+            }
+        case 3:
+            {
+                ResourceManager.rubedoCount += nr;
+                break;
+            }
+        }
+    }
+
+    private int GetPotionID(Potion potion)
+    {
+        int thisPotion;
+
+        switch (potion.id)
+        {
+            case 0:
+                {
+                    thisPotion = ResourceManager.albedoCount;
+                    return thisPotion;
+                }
+            case 1:
+                {
+                    thisPotion = ResourceManager.failedCount;
+                    return thisPotion;
+                }
+            case 2:
+                {
+                    thisPotion = ResourceManager.nigredoCount;
+                    return thisPotion;
+                }
+            case 3:
+                {
+                    thisPotion = ResourceManager.rubedoCount;
+                    return thisPotion;
+                }
+            default: return -1;
+        }
     }
 }

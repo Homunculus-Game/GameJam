@@ -21,7 +21,7 @@ public class StirAnimation : MonoBehaviour
         //     _potion.count++;
         // }
         // Function(_ingredient1, _ingredient2, _ingredient3, _ingredient4, _ingredient5);
-        _potion.count++;
+        // _potion.count++;
         Debug.Log("Enter minigame 2, change scene!");
     }
 
@@ -37,25 +37,25 @@ public class StirAnimation : MonoBehaviour
         animator.speed = 0f;
     }
 
-    private void Function(Ingredient ingredient1, 
-                          Ingredient ingredient2, 
-                          Ingredient ingredient3, 
-                          Ingredient ingredient4 = null, 
-                          Ingredient ingredient5 = null)
-    {
-        if (ingredient4 == null && ingredient5 == null)
-        {
-            if (ingredient1.count == 2 && ingredient2.count == 2 && ingredient3.count == 1)
-            {
-                _potion.count++;
-            }
-        }
-        else if (ingredient4 != null && ingredient5 != null)
-        {
-            if (ingredient1.count == 2 && ingredient2.count == 2 && ingredient3.count == 1 && ingredient4.count == 1 && ingredient5.count == 1)
-            {
-                _potion.count++;
-            }
-        }
-    }
+    // private void Function(Ingredient ingredient1, 
+    //                       Ingredient ingredient2, 
+    //                       Ingredient ingredient3, 
+    //                       Ingredient ingredient4 = null, 
+    //                       Ingredient ingredient5 = null)
+    // {
+    //     if (ingredient4 == null && ingredient5 == null)
+    //     {
+    //         if (ingredient1.count == 2 && ingredient2.count == 2 && ingredient3.count == 1)
+    //         {
+    //             _potion.count++;
+    //         }
+    //     }
+    //     else if (ingredient4 != null && ingredient5 != null)
+    //     {
+    //         if (ingredient1.count == 2 && ingredient2.count == 2 && ingredient3.count == 1 && ingredient4.count == 1 && ingredient5.count == 1)
+    //         {
+    //             _potion.count++;
+    //         }
+    //     }
+    // }
 }

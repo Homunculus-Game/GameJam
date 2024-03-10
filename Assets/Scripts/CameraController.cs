@@ -10,6 +10,7 @@ public class CameraController : MonoBehaviour
     [SerializeField] private GameObject _canvas1;
     [SerializeField] private GameObject _canvas2;
     [SerializeField] private GameObject _canvas3;
+    [SerializeField] private GameObject _dayCanvas;
 
     [SerializeField] private float speed = 5.0f;
 
@@ -41,6 +42,15 @@ public class CameraController : MonoBehaviour
                 // Debug.Log(hit.transform.name);
             }
         }
+
+        //if (_camera.position.x <= -0.05f)
+        //{
+        //    _dayCanvas.SetActive(false);
+        //}
+        //else
+        //{
+        //    _dayCanvas.SetActive(true);
+        //}
     }
 
     private void LateUpdate()

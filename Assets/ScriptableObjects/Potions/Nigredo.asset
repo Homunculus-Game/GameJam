@@ -14,5 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Nigredo
   sprite: {fileID: 21300000, guid: 25bf536db4badd646b5cdc0660066240, type: 3}
-  count: 7
-  number: 0
+  id: 2
