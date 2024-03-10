@@ -13,21 +13,21 @@ public class Tutorial : MonoBehaviour
     [SerializeField] private GameObject _nextButton3;
     [SerializeField] private GameObject _skipButton;
 
-    [SerializeField] private GameObject _canvas1;
     [SerializeField] private GameObject _canvas2;
 
     private int i;
 
     void Start()
     {
-
         if (ResourceManager.newGame == false)
         {
             _button.SetActive(true);
             gameObject.SetActive(false);
         }
         else
-        { _button.SetActive(false);}
+        {
+            _button.SetActive(false);
+        }
 
         _uiElements[0].SetActive(true);
         _arrow.SetActive(false);

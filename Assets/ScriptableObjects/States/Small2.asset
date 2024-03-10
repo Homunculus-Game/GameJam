@@ -17,3 +17,5 @@ MonoBehaviour:
   stage: 0
   scale: {x: 1.5, y: 1.5, z: 1.5}
   gameObject: {fileID: 0}
+  clip: {fileID: 8300000, guid: 8b09d0fb4a08b5044bf8c74d808a0300, type: 3}
+  loop: 0

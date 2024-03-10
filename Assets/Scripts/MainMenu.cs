@@ -18,9 +18,10 @@ public class MainMenu : MonoBehaviour
         ResourceManager.rubedoCount = 3;
         ResourceManager.nigredoCount = 0;
         ResourceManager.failedCount = 0;
-        ResourceManager.currentDay = 1;
 
         ResourceManager.newGame = true;
+
+        ResourceManager.currentDay = 1;
 
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }

@@ -25,6 +25,8 @@ public class ResourceManager : MonoBehaviour
     {
         // Cursor.SetCursor(_cursorTexture, Vector2.zero, CursorMode.Auto);
 
+        newGame = true;
+
         currentDay = 1;
 
         albedoCount = 3;

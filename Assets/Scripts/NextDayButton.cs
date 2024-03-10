@@ -38,7 +38,7 @@ public class NextDayButton : MonoBehaviour
 
         ResourceManager.currentDay++;
 
-        if (ResourceManager.currentDay % 5 == 0)
+        if (ResourceManager.currentDay % 3 == 0)
         {
             ResourceManager.failedCount++;
         }    
