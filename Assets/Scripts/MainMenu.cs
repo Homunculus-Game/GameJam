@@ -14,6 +14,10 @@ public class MainMenu : MonoBehaviour
 
     public void PlayGame()
     {
+        ResourceManager.albedoCount = 0;
+        ResourceManager.rubedoCount = 0;
+        ResourceManager.nigredoCount = 0;
+        ResourceManager.failedCount = 0;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
@@ -42,22 +46,22 @@ public class MainMenu : MonoBehaviour
     public void LoadGame()
     {
         // This creates a StreamReader, which allows us to read the data from the specified file path
-        using StreamReader reader = new StreamReader(_dataFilepath);
-        // We read in the file as a string
-        string dataToLoad = reader.ReadToEnd();
-
-        // Here we convert the JSON formatted string into an actual Object in memory
-        GameData gameData = JsonUtility.FromJson<GameData>(dataToLoad);
-
-        ResourceManager.test = gameData.day;
-        // ResourceManager.currentDay = gameData.day;
-        ResourceManager.albedoCount = gameData.albedoCount;
-        ResourceManager.rubedoCount = gameData.rubedoCount;
-        ResourceManager.nigredoCount = gameData.nigredoCount;
-        ResourceManager.failedCount = gameData.failedCount;
-        //PlayerController.currentHealth = gameData.health;
-        //PlayerController.experience = gameData.xp;
-        //PlayerController.numProjectiles = gameData.ammo;
+        // using StreamReader reader = new StreamReader(_dataFilepath);
+        // // We read in the file as a string
+        // string dataToLoad = reader.ReadToEnd();
+        // 
+        // // Here we convert the JSON formatted string into an actual Object in memory
+        // GameData gameData = JsonUtility.FromJson<GameData>(dataToLoad);
+        // 
+        // ResourceManager.test = gameData.day;
+        // // ResourceManager.currentDay = gameData.day;
+        // ResourceManager.albedoCount = gameData.albedoCount;
+        // ResourceManager.rubedoCount = gameData.rubedoCount;
+        // ResourceManager.nigredoCount = gameData.nigredoCount;
+        // ResourceManager.failedCount = gameData.failedCount;
+        // //PlayerController.currentHealth = gameData.health;
+        // //PlayerController.experience = gameData.xp;
+        // //PlayerController.numProjectiles = gameData.ammo;
 
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
 

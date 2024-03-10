@@ -14,5 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Rubedo
   sprite: {fileID: 21300000, guid: 902f3eb278ba2b34a861cb86e8d11c35, type: 3}
-  count: 8
-  number: 0
+  id: 3

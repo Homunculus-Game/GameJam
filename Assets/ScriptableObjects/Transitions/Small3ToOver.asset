@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: gameOver
   fromState: {fileID: 11400000, guid: 78b65f05e9b62a7479b055700cb2c540, type: 2}
-  toState: {fileID: 11400000, guid: bcb5ec102e56a4549a22fa3a9a6f76ce, type: 2}
+  toState: {fileID: 11400000, guid: 85d37382e0c77264aa8f689840064fc7, type: 2}
   potion: {fileID: 11400000, guid: 35443848c9b1914419d25c6056aad304, type: 2}
