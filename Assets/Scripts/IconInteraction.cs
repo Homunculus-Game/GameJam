@@ -1,4 +1,6 @@
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class IconInteraction : MonoBehaviour
 {
@@ -11,6 +13,8 @@ public class IconInteraction : MonoBehaviour
     [SerializeField] private Ingredient _ingredient3;
     [SerializeField] private Ingredient _ingredient4;
     [SerializeField] private Ingredient _ingredient5;
+
+    private Canvas _albedoCanvas;
 
     private int _thisPotion;
 
@@ -33,6 +37,7 @@ public class IconInteraction : MonoBehaviour
         // }
         // Function(_ingredient1, _ingredient2, _ingredient3, _ingredient4, _ingredient5);
 
+      
         switch (_potion.number)
         {
             case 1: ResourceManager.albedoCount++; break;
@@ -41,8 +46,19 @@ public class IconInteraction : MonoBehaviour
             case 2: ResourceManager.failedCount++; break;
         }
 
+        if (_potion.name == "Albedo")
+        {
+            SceneManager.LoadScene("AlbedoMinigame");
+            Debug.Log("Enter Albedo");
+        }
+
+        if (_potion.name == "Rubedo")
+        {
+            SceneManager.LoadScene("RubedoMinigame");
+            Debug.Log("Enter Rubedo");
+        }
+
         _potion.count++;
-        Debug.Log("Enter minigame 2, change scene!");
         Debug.Log(_potion.name);
     }
 
