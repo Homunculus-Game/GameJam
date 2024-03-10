@@ -19,7 +19,15 @@ public class MainMenu : MonoBehaviour
         ResourceManager.nigredoCount = 0;
         ResourceManager.failedCount = 0;
 
+        ResourceManager.mushrooms = 6;
+        ResourceManager.olive = 6;
+        ResourceManager.onix = 0;
+        ResourceManager.flower = 5;
+        ResourceManager.salt = 6;
+
         ResourceManager.newGame = true;
+
+        ResourceManager.currentState = "normal";
 
         ResourceManager.currentDay = 1;
 

@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class ResourceManager : MonoBehaviour
 {
-    // public static ResourceManager instance;
+    // public static ResourceManager instance; !!!
 
     [HideInInspector] public static int albedoCount = 0;
     [HideInInspector] public static int rubedoCount = 0;
@@ -10,6 +10,8 @@ public class ResourceManager : MonoBehaviour
     [HideInInspector] public static int failedCount = 0;
 
     [HideInInspector] public static int currentDay = 1;
+
+    public static string currentState = "normal";
 
     public static int mushrooms = 0;
     public static int olive = 0;

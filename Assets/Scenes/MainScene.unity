@@ -4554,7 +4554,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Now, let's see how many days you can keep me alive...
+  m_text: Now, let's see how many days you can keep me alive... Remember, don't ignore
+    me for too many days.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d309c79968cddb94f9e63c57875a9562, type: 2}
   m_sharedMaterial: {fileID: 8737459554834171123, guid: d309c79968cddb94f9e63c57875a9562,
@@ -8822,12 +8823,31 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 5fbf17f9721293748b9783370c9930b6, type: 2}
   - {fileID: 11400000, guid: b378f793b2c24c249bb822f18586af91, type: 2}
   - {fileID: 11400000, guid: 76b262289e480fc49be52910ba50e95d, type: 2}
+  _states:
+  - {fileID: 11400000, guid: 4cccbb534a1614f47a449a30dc091983, type: 2}
+  - {fileID: 11400000, guid: 990787e390fb60f4fbc5f38babef5ef3, type: 2}
+  - {fileID: 11400000, guid: 1d4934ae99a214c4c9461bbca18a1cac, type: 2}
+  - {fileID: 11400000, guid: 85d37382e0c77264aa8f689840064fc7, type: 2}
+  - {fileID: 11400000, guid: bcb5ec102e56a4549a22fa3a9a6f76ce, type: 2}
+  - {fileID: 11400000, guid: 4f23593361fea0843b56a879b37779be, type: 2}
+  - {fileID: 11400000, guid: 209927b979443da4a87418735033c5be, type: 2}
+  - {fileID: 11400000, guid: f64f4b956d535274ea966a8a06047e3b, type: 2}
+  - {fileID: 11400000, guid: 4f4d366e28dc7144e8ad18f0e34e36e9, type: 2}
+  - {fileID: 11400000, guid: 8859822eea4187a4da9ba95929704839, type: 2}
+  - {fileID: 11400000, guid: 7d1fdd049cc8de044bc75a94abe4572f, type: 2}
+  - {fileID: 11400000, guid: 4846ca7b27ca7f3499d382a4c0d835f9, type: 2}
+  - {fileID: 11400000, guid: 9cb0712b6793b8f46afe390596839df7, type: 2}
+  - {fileID: 11400000, guid: 61a4bbc14340aa5478213cd11fc512e3, type: 2}
+  - {fileID: 11400000, guid: 47d601079590e204f9b1cd62dfe8593d, type: 2}
+  - {fileID: 11400000, guid: 5ee31f24436971a4cac323f105a8cdf0, type: 2}
+  - {fileID: 11400000, guid: 78b65f05e9b62a7479b055700cb2c540, type: 2}
   _defaultState: {fileID: 11400000, guid: 61a4bbc14340aa5478213cd11fc512e3, type: 2}
   usePotionScripts:
   - {fileID: 909274537}
   - {fileID: 595406058}
   - {fileID: 348254915}
   - {fileID: 577786323}
+  _nextDayScript: {fileID: 1710604683}
   _audio:
   - {fileID: 1638760375}
   - {fileID: 1146715572}

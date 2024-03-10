@@ -1,4 +1,6 @@
+using System;
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class NextDayButton : MonoBehaviour
@@ -8,6 +10,8 @@ public class NextDayButton : MonoBehaviour
     [SerializeField] private Animator _fadeToBlack;
 
     [SerializeField] private Canvas _canvas;
+
+    public event Action<string> FakePotion;
 
     private bool canUse = true;
 
@@ -26,8 +30,25 @@ public class NextDayButton : MonoBehaviour
         if (canUse == false)
             return;
 
+        // if (ResourceManager.currentDay % 2 == 0 && ChangeState._potionsUsed == 0)
+        // {
+        //     FakePotion?.Invoke("Albedo");
+        // }
+
+        if (ChangeState._potionsUsed == 0)
+        {
+            ChangeState.daysWithNoPotion++;
+        }
+
+        if (ChangeState.daysWithNoPotion >= 2)
+        {
+            ChangeState.daysWithNoPotion = 0;
+            FakePotion?.Invoke("Albedo");
+        }
+
         _canvas.sortingOrder = 110;
         canUse = false;
+
         StartCoroutine(FadeToBlack());
     }
 
@@ -49,11 +70,11 @@ public class NextDayButton : MonoBehaviour
 
         //}
 
-        ResourceManager.mushrooms += Random.Range(1, 3);
-        ResourceManager.olive += Random.Range(1, 3);
-        ResourceManager.onix += Random.Range(0, 2);
-        ResourceManager.flower += Random.Range(1, 3);
-        ResourceManager.salt += Random.Range(1, 3);
+        ResourceManager.mushrooms += UnityEngine.Random.Range(1, 3);
+        ResourceManager.olive += UnityEngine.Random.Range(1, 3);
+        ResourceManager.onix += UnityEngine.Random.Range(0, 2);
+        ResourceManager.flower += UnityEngine.Random.Range(1, 3);
+        ResourceManager.salt += UnityEngine.Random.Range(1, 3);
 
         // yield return new WaitForSeconds(1);
         // _fadeToBlack.SetBool("EndDay", false);
