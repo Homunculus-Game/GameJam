@@ -151,6 +151,7 @@ public class ChangeState : MonoBehaviour
             {
                 _potionsUsed++;
                 _currentState = transition.toState;
+                ResourceManager.currentState = _currentState.name;
                 _audioSource.clip = _currentState.clip;
                 _audioSource.Play();
                 _audioSource.loop = _currentState.loop;
@@ -168,6 +169,7 @@ public class ChangeState : MonoBehaviour
             {
                 _potionsUsed++;
                 _currentState = transition.toState;
+                ResourceManager.currentState = _currentState.name;
                 _audioSource.clip = _currentState.clip;
                 _audioSource.Play();
                 _audioSource.loop = _currentState.loop;
