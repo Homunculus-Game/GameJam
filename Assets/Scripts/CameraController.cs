@@ -67,6 +67,11 @@ public class CameraController : MonoBehaviour
         _canvas2.SetActive(true);
     }
 
+    public void MoveCameraLeft2()
+    {
+        _targetPosition = _leftPosition;
+    }
+
     public void MoveCameraRight()
     {
         _targetPosition = _rightPosition;

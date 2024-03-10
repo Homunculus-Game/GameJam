@@ -9,6 +9,8 @@ public class NextDayButton : MonoBehaviour
 
     [SerializeField] private Canvas _canvas;
 
+    private bool canUse = true;
+
     private void OnMouseEnter()
     {
         _animator.SetBool("hover", true);
@@ -21,7 +23,11 @@ public class NextDayButton : MonoBehaviour
 
     private void OnMouseDown()
     {
+        if (canUse == false)
+            return;
+
         _canvas.sortingOrder = 110;
+        canUse = false;
         StartCoroutine(FadeToBlack());
     }
 
@@ -46,5 +52,6 @@ public class NextDayButton : MonoBehaviour
         yield return new WaitForSeconds(1);
         _fadeToBlack.SetBool("EndDay", false);
         _canvas.sortingOrder -= 10;
+        canUse = true;
     }
 }
