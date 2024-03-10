@@ -20,9 +20,17 @@ public class Tutorial : MonoBehaviour
 
     void Start()
     {
+
+        if (ResourceManager.newGame == false)
+        {
+            _button.SetActive(true);
+            gameObject.SetActive(false);
+        }
+        else
+        { _button.SetActive(false);}
+
         _uiElements[0].SetActive(true);
         _arrow.SetActive(false);
-        _button.SetActive(false);
         i = 0;
 
         _nextButton1.SetActive(true);
@@ -79,6 +87,7 @@ public class Tutorial : MonoBehaviour
             gameObject.SetActive(false);
             _button.SetActive(true);
             _canvas2.SetActive(true);
+            ResourceManager.newGame = false;
         }
     }
 
@@ -86,5 +95,6 @@ public class Tutorial : MonoBehaviour
     {
         gameObject.SetActive(false);
         _button.SetActive(true);
+        ResourceManager.newGame = false;
     }
 }
