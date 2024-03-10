@@ -1,4 +1,6 @@
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class IconInteraction : MonoBehaviour
 {
@@ -16,7 +18,8 @@ public class IconInteraction : MonoBehaviour
                 {
                     ResourceManager.salt -= 2;
                     ResourceManager.olive -= 2;
-                    ResourceManager.albedoCount++;
+                    //ResourceManager.albedoCount++;
+                    SceneManager.LoadScene("AlbedoMinigame");
                 }
                 break;
             }

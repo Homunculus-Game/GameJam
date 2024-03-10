@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GameOver2.unity
     guid: dad79e2a4ab79bd4aa567a0cebe1b356
+  - enabled: 1
+    path: Assets/Scenes/AlbedoMinigame.unity
+    guid: d7b1a7ffba42744409721747ddb2b6ca
   m_configObjects: {}
