@@ -10,14 +10,38 @@ public class InitPotion : MonoBehaviour
 
     private void Start()
     {
-        // _potion.count = 4;
-        _potion.number = 0;
+        // _potion.count = 0;
+        // _potion.number = 0;
         _spriteRenderer.sprite = _potion.sprite;
-        _text.text = _potion.count.ToString();
+        // _text.text = _potion.count.ToString();
     }
 
     private void Update()
     {
-        _text.text = _potion.count.ToString();
+        // switch (_potion.id)
+        // {
+        // case 0:
+        //     {
+        //         _text.text = ResourceManager.albedoCount.ToString();
+        //         break;
+        //     }
+        // case 1:
+        //     {
+        //         _text.text = ResourceManager.failedCount.ToString();
+        //         break;
+        //     }
+        // case 2:
+        //     {
+        //         _text.text = ResourceManager.nigredoCount.ToString();
+        //         break;
+        //     }
+        // case 3:
+        //     {
+        //         _text.text = ResourceManager.rubedoCount.ToString();
+        //         break;
+        //     }
+        // }
+
+        // _text.text = _potion.count.ToString();
     }
 }

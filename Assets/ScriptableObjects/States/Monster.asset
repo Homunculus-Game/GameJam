@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: monster
   ID: 0
-  scale: {x: 2, y: 2, z: 2}
+  stage: 1
+  scale: {x: 0.8, y: 0.8, z: 0.8}
   gameObject: {fileID: 0}

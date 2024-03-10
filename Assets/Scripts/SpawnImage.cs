@@ -25,7 +25,7 @@ public class SpawnImage : MonoBehaviour
     private GameObject _rectTransform;
     [SerializeField] private GameObject _spawn;
 
-    bool inHand = false;
+    // bool inHand = false;
 
     [SerializeField] private GameObject _sprite;
 
@@ -48,54 +48,54 @@ public class SpawnImage : MonoBehaviour
     {
         _spriteRenderer = _sprite.GetComponent<SpriteRenderer>();
 
-        _rubedo.count = 3;
+        // _rubedo.count = 3;
     }
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            Ray mouseClickRay = Camera.main.ScreenPointToRay(Input.mousePosition);
-        
-            if (Physics.Raycast(mouseClickRay, out RaycastHit hit))
-            {
-                if (hit.transform.CompareTag("sprite"))
-                {
-                    _rubedo.count--;
-                    _rectTransform = Instantiate(_spawn, Input.mousePosition, Quaternion.identity, _canvas.transform);
-                    inHand = true;
-                    //Debug.Log("it is sprite");
-        
-                    if (_rubedo.count == 0)
-                    {
-                        // _spriteRenderer.sprite = null;
-                        _sprite.SetActive(false);
-                    }
-                }
-                else if (hit.transform.CompareTag("blob") && inHand == true)
-                {
-                    Destroy(_rectTransform);
-                    inHand = false;
-                    //Debug.Log("sprite gone");
-                }
-                else
-                {
-                    if (_rubedo.count != 0 && inHand == true)
-                    {
-                        _rubedo.count++;
-                    }
-                    else if (_rubedo.count == 0 && inHand == true)
-                    {
-                        _rubedo.count++;
-                        // _spriteRenderer.sprite = _rubedo.sprite;
-                        _sprite.SetActive(true);
-                    }
-        
-                    Destroy(_rectTransform);
-                    inHand = false;
-                }
-        
-            }
-        }
+        // if (Input.GetMouseButtonDown(0))
+        // {
+        //     Ray mouseClickRay = Camera.main.ScreenPointToRay(Input.mousePosition);
+        // 
+        //     if (Physics.Raycast(mouseClickRay, out RaycastHit hit))
+        //     {
+        //         if (hit.transform.CompareTag("sprite"))
+        //         {
+        //             // _rubedo.count--;
+        //             _rectTransform = Instantiate(_spawn, Input.mousePosition, Quaternion.identity, _canvas.transform);
+        //             inHand = true;
+        //             //Debug.Log("it is sprite");
+        // 
+        //             if (_rubedo.count == 0)
+        //             {
+        //                 // _spriteRenderer.sprite = null;
+        //                 _sprite.SetActive(false);
+        //             }
+        //         }
+        //         else if (hit.transform.CompareTag("blob") && inHand == true)
+        //         {
+        //             Destroy(_rectTransform);
+        //             inHand = false;
+        //             //Debug.Log("sprite gone");
+        //         }
+        //         else
+        //         {
+        //             if (_rubedo.count != 0 && inHand == true)
+        //             {
+        //                 _rubedo.count++;
+        //             }
+        //             else if (_rubedo.count == 0 && inHand == true)
+        //             {
+        //                 _rubedo.count++;
+        //                 // _spriteRenderer.sprite = _rubedo.sprite;
+        //                 _sprite.SetActive(true);
+        //             }
+        // 
+        //             Destroy(_rectTransform);
+        //             inHand = false;
+        //         }
+        // 
+        //     }
+        // }
     }
 }
