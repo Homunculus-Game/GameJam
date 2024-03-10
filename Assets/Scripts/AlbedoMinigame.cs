@@ -44,6 +44,8 @@ public class AlbedoMinigame : MonoBehaviour
             {
                 isMoving = false;
                 arrow.position = targetPosition; // Ensure the arrow stops exactly at the end of the bar
+                //ResourceManager.failedCount++;
+                SceneManager.LoadScene("MainScene");
                 Debug.Log("Arrow reached the end of the bar!");
             }
         }
@@ -70,9 +72,11 @@ public class AlbedoMinigame : MonoBehaviour
                     secondRectangleClicked = true;
                 }
 
-                if (secondRectangleClicked)
+                if (secondRectangleClicked && firstRectangleClicked)
                 {
+                    ResourceManager.albedoCount++;
                     Debug.Log("Player succeeded!");
+                    SceneManager.LoadScene("MainScene");
                 }
 
                 return;
@@ -80,11 +84,8 @@ public class AlbedoMinigame : MonoBehaviour
         }
 
         Debug.Log("Player failed!");
-    }
-
-    public void OnExitButtonClick()
-    {
-        // Load the MainScene
+        //ResourceManager.failedCount++;
         SceneManager.LoadScene("MainScene");
     }
+
 }
