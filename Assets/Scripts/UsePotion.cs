@@ -15,7 +15,7 @@ public class UsePotion : MonoBehaviour
     private SpriteRenderer _spriteRenderer;
     private BoxCollider _boxCollider;
 
-    public Action<Potion> OnPotionUsed;
+    public event Action<Potion> OnPotionUsed;
 
     private void Start()
     {

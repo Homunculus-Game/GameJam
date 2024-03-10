@@ -13,10 +13,15 @@ public class ChangeState : MonoBehaviour
     [SerializeField] private Transform _transform;
 
     [SerializeField] private List<Transition> _transitions = new();
+    [SerializeField] private List<State> _states = new();
 
     [SerializeField] private State _defaultState;
 
     [SerializeField] private UsePotion[] usePotionScripts;
+
+    [SerializeField] private NextDayButton _nextDayScript;
+
+    public static int daysWithNoPotion = 0;
 
     private State _currentState;
 
@@ -34,11 +39,12 @@ public class ChangeState : MonoBehaviour
         {
             usePotionScript.OnPotionUsed += ApplyPotion;
         }
+        _nextDayScript.FakePotion += ApplyPotion2;
     }
 
     private void Start()
     {
-        _currentState = _defaultState;
+        // _currentState = _defaultState;
         _transform.localScale = _defaultState.scale;
 
         _potionsUsed = 0;
@@ -46,6 +52,16 @@ public class ChangeState : MonoBehaviour
         _audioSource = GetComponent<AudioSource>();
 
         _initialScale = transform.localScale;
+
+        // foreach (var state in _states)
+        // {
+        //     if (state.name == ResourceManager.currentState)
+        //     {
+        //         _currentState = state;
+        //         break;
+        //     }
+        // }
+        _currentState = _states.Find(x => x.name == ResourceManager.currentState); // !!!
     }
 
     private void Update()
@@ -102,10 +118,10 @@ public class ChangeState : MonoBehaviour
             _hat.SetActive(false);
         }
 
-        //if (ResourceManager.currentDay % 2 == 0 && _potionsUsed == 0)
-        //{
-        //    transform.localScale = new Vector3(_initialScale.x / 2.0f, _initialScale.y / 2.0f, _initialScale.z / 2.0f);
-        //}
+        // if (ResourceManager.currentDay % 2 == 0 && _potionsUsed == 0)
+        // {
+        //     transform.localScale = new Vector3(_initialScale.x / 2.0f, _initialScale.y / 2.0f, _initialScale.z / 2.0f);
+        // }
     }
 
     List<Transition> GetPossibleTransitions(State state)
@@ -126,12 +142,29 @@ public class ChangeState : MonoBehaviour
         return possibleStates;
     }
 
-    void ApplyPotion(Potion potion)
+    public void ApplyPotion(Potion potion)
     {
         List<Transition> transitions = GetPossibleTransitions(_currentState);
         foreach (var transition in transitions)
         {
             if (transition.potion == potion)
+            {
+                _potionsUsed++;
+                _currentState = transition.toState;
+                _audioSource.clip = _currentState.clip;
+                _audioSource.Play();
+                _audioSource.loop = _currentState.loop;
+                break;
+            }
+        }
+    }
+
+    public void ApplyPotion2(string name)
+    {
+        List<Transition> transitions = GetPossibleTransitions(_currentState);
+        foreach (var transition in transitions)
+        {
+            if (transition.potion.name == name)
             {
                 _potionsUsed++;
                 _currentState = transition.toState;
