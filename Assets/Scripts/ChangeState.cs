@@ -24,6 +24,8 @@ public class ChangeState : MonoBehaviour
 
     [SerializeField] private AudioSource[] _audio;
 
+    private Vector3 _initialScale;
+
     private AudioSource _audioSource;
 
     private void Awake()
@@ -42,6 +44,8 @@ public class ChangeState : MonoBehaviour
         _potionsUsed = 0;
 
         _audioSource = GetComponent<AudioSource>();
+
+        _initialScale = transform.localScale;
     }
 
     private void Update()
@@ -54,6 +58,7 @@ public class ChangeState : MonoBehaviour
                     _stage2.SetActive(false);
                     //_stage3.SetActive(false);
 
+                    // transform.localScale = new Vector3(1, 1, 1);
                     _stage1.transform.localScale = Vector3.Lerp(_stage1.transform.localScale, _currentState.scale, 4.0f * Time.deltaTime);
 
                     break;
@@ -64,6 +69,7 @@ public class ChangeState : MonoBehaviour
                     _stage2.SetActive(true);
                     //_stage3.SetActive(false);
 
+                    // transform.localScale = new Vector3(1, 1, 1);
                     _stage2.transform.localScale = Vector3.Lerp(_stage2.transform.localScale, _currentState.scale, 4.0f * Time.deltaTime);
                     break;
                 }
@@ -73,6 +79,7 @@ public class ChangeState : MonoBehaviour
                     //_stage2.SetActive(false);
                     //_stage3.SetActive(true);
 
+                    // transform.localScale = new Vector3(1, 1, 1);
                     _stage3.transform.localScale = _currentState.scale;
                     break;
                 }
@@ -94,17 +101,11 @@ public class ChangeState : MonoBehaviour
         {
             _hat.SetActive(false);
         }
-        // _audioSource.clip = _currentState.clip;
-        //if (_currentState.name == "big2")
-        {
-            //_audio[0].Play();
 
-        }
-        //if (_currentState.name == "big3")
-        {
-            // _audio[1].Play();
-            //_audioSource.clip = _currentState.clip; _audioSource.Play();
-        }
+        //if (ResourceManager.currentDay % 2 == 0 && _potionsUsed == 0)
+        //{
+        //    transform.localScale = new Vector3(_initialScale.x / 2.0f, _initialScale.y / 2.0f, _initialScale.z / 2.0f);
+        //}
     }
 
     List<Transition> GetPossibleTransitions(State state)
